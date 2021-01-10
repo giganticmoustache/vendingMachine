@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "fc6fe8d1-31fd-49a3-bf2c-4d6e9081b02a",
+		"name": "vendingmachine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/vendingMachine/getProductTypes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vendingMachine/getProductTypes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendingMachine",
+						"getProductTypes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/vendingMachine/selectProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selection\" : {\n        \"productType\" : \"FOOD\",\n        \"numberOfSelectedItems\" : 2\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vendingMachine/selectProduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendingMachine",
+						"selectProduct"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/vendingMachine/selectProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selection\" : {\n        \"productType\" : \"HOT_BEVERAGE\",\n        \"numberOfSelectedItems\" : 5,\n        \"sugerCount\" : 0\n        }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vendingMachine/selectProduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendingMachine",
+						"selectProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/vendingMachine/selectProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selection\" : {\n        \"productType\" : \"COLD_BEVERAGE\",\n        \"numberOfSelectedItems\" : 5\n        }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vendingMachine/selectProduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendingMachine",
+						"selectProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/vendingMachine/getPaymentTypes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vendingMachine/getPaymentTypes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendingMachine",
+						"getPaymentTypes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/vendingMachine/makePayment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"paymentType\" : \"COIN\",\n    \"amount\" : 5,\n    \"price\" : 2.10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vendingMachine/makePayment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendingMachine",
+						"makePayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/vendingMachine/makePayment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"paymentType\" : \"BANKNOTE\",\n    \"amount\" : 351,\n    \"price\" : 2.10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vendingMachine/makePayment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendingMachine",
+						"makePayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/vendingMachine/getReceipt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selection\" : {\n        \"productType\" : \"FOOD\",\n        \"numberOfSelectedItems\" : 2\n    },\n    \"payment\": {\n        \"result\": true,\n        \"paymentType\": \"BANKNOTE\",\n        \"coinReturned\": {\n            \"FIVE\": 1,\n            \"TWENTYFIVE\": 1,\n            \"FIFTY\": 1,\n            \"ONE\": 3,\n            \"TEN\": 1\n        },\n        \"banknoteReturned\": {\n            \"TWENTY\": 2,\n            \"FIVE\": 1,\n            \"HUNDRED\": 3\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vendingMachine/getReceipt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendingMachine",
+						"getReceipt"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
